@@ -71,7 +71,7 @@ public class TetrisGame extends JFrame {
     public void startGame() {
         getContentPane().removeAll(); // removes existing elements on ContentPane
 
-        removeKeyListener(keyListener);
+        removeKeyListener(keyListener); // remove key listener
 
         if (board != null) {
             remove(board); // removes existing board if one is present
@@ -81,32 +81,32 @@ public class TetrisGame extends JFrame {
         setTitle("Tetris");
         setLayout(new BorderLayout());
 
-        topPanel = new JPanel(new GridLayout(1, 2));
+        topPanel = new JPanel(new GridLayout(1, 2));    //initial tetris main panel
         
         if (extendMode) {
 
             setSize(width*2, height); // set the size of the window
             
-            createAndStartBoard2();
+            createAndStartBoard2();     // create and start extended player's game
         } else {
             setSize(width, height); // set the size of the window
         }
         
-        createAndStartBoard();
+        createAndStartBoard();  // create and start origin player's game
 
         add(topPanel, BorderLayout.CENTER); // Add the top panel to the center of the BorderLayout
 
         if (extendMode) {
 
-            createOptionPanel();
+            createOptionPanel();    // create option panel - back, pause button
         }
         
         setFocusable(true); // make the board focusable for key events
         requestFocusInWindow(); // request focus on the board
 
-        keyListener = new TAdapter();
+        keyListener = new TAdapter();   // create key listener
 
-        addKeyListener(keyListener);
+        addKeyListener(keyListener);    // add key listener
         
         revalidate(); // refresh the layout
         repaint(); // repaint the window to reflect changes
