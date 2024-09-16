@@ -278,7 +278,7 @@ public class TetrisGame extends JFrame {
                 JOptionPane.YES_NO_OPTION,
                 JOptionPane.QUESTION_MESSAGE,
                 null,
-                new Object[] { "Restart", "Main Menu" }, // options for the user to restart or go to main menu
+                new Object[] { "Try again", "Main Menu" }, // options for the user to restart or go to main menu
                 "Restart");
 
         if (option == JOptionPane.YES_OPTION) {
